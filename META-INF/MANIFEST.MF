@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.7
+Created-By: 1.8.0_111-b14 (Oracle Corporation)
+Class-Path: lib/AbsoluteLayout.jar lib/commons-lang-2.6.jar lib/common
+ s-logging-1.1.1.jar lib/hsqldb.jar lib/jackcess-2.1.6.jar lib/swing-l
+ ayout-1.0.4.jar lib/ucanaccess-4.0.2.jar lib/sqlite-jdbc-3.30.1.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: thebookseller.TheBookSeller
+
