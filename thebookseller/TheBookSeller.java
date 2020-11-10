@@ -226,10 +226,10 @@
      this.jLabel2.setText("Password");
      this.jPanel1.add(this.jLabel2);
      this.jLabel2.setBounds(52, 130, 60, 14);
-     this.jTextField2.setText(" ");
+     this.jTextField2.setText("");
      this.jPanel1.add(this.jTextField2);
      this.jTextField2.setBounds(170, 130, 69, 20);
-     this.jTextField1.setText(" ");
+     this.jTextField1.setText("");
      this.jTextField1.addActionListener(new ActionListener() {
            public void actionPerformed(ActionEvent evt) {
              TheBookSeller.this.jTextField1ActionPerformed(evt);
