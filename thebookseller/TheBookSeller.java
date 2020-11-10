@@ -29,6 +29,7 @@
  import javax.swing.JScrollPane;
  import javax.swing.JTextArea;
  import javax.swing.JTextField;
+ import javax.swing.JPasswordField;
 
  public class TheBookSeller extends JFrame {
    private static final long serialVersionUID = 1L;
@@ -139,7 +140,7 @@
 
    private JTextField jTextField1;
 
-   private JTextField jTextField2;
+   private JPasswordField jTextField2;
 
    private JTextField jTextField3;
 
@@ -163,7 +164,8 @@
      this.jPanel1 = new JPanel();
      this.jLabel1 = new JLabel();
      this.jLabel2 = new JLabel();
-     this.jTextField2 = new JTextField();
+     //this.jTextField2 = new JTextField();
+     this.jTextField2 = new JPasswordField(20);
      this.jTextField1 = new JTextField();
      this.jButton8 = new JButton();
      this.jLabel12 = new JLabel();
@@ -463,7 +465,7 @@
      this.jTextArea4.setColumns(20);
      this.jTextArea4.setEditable(false);
      this.jTextArea4.setRows(5);
-     this.jTextArea4.setText("This is an application prepared for\nthe Master in Cybersecurity provided \nby the Computer Security Lab (Cosec),\nUniversity Carlos III of Madrid");
+     this.jTextArea4.setText("This is an application prepared for\nthe Master in Cybersecurity provided \nby the Computer Security Lab (Cosec),\nUniversity Carlos III of Madrid\nPatched by 100330190 100346060");
      this.jScrollPane3.setViewportView(this.jTextArea4);
      this.jPanel8.add(this.jScrollPane3);
      this.jScrollPane3.setBounds(50, 100, 310, 100);
@@ -511,7 +513,7 @@
 
    private void jButton8ActionPerformed(ActionEvent evt) {
      String userID_name = this.jTextField1.getText().replaceAll(" ", "");
-     String pass = this.jTextField2.getText().replaceAll(" ", "");
+     String pass = new String(this.jTextField2.getPassword()).replaceAll(" ", "");
      if (userID_name.equals("") || pass.equals("")) {
        this.jPanel3.setVisible(true);
        this.jLabel3.setText("All fields should be completed");
