@@ -4,7 +4,7 @@
  * @Project: Data Protection Lab
  * @Filename: TheBookSeller.java
  * @Last modified by:   Guille
- * @Last modified time: 08-11-2020
+ * @Last modified time: 10-11-2020
  */
  package thebookseller;
 
@@ -317,7 +317,7 @@
      getContentPane().add(this.jPanel2);
      this.jPanel2.setBounds(10, 10, 440, 330);
      this.jPanel3.setLayout((LayoutManager)null);
-     this.jLabel3.setText("An error has occurred. Contact your Shop Admin");
+     this.jLabel3.setText("An error has occurred. Contact your Shop administrator");
      this.jPanel3.add(this.jLabel3);
      this.jLabel3.setBounds(80, 110, 430, 14);
      this.jLabel4.setIcon(new ImageIcon(getClass().getResource("/data/error.png")));
@@ -532,7 +532,7 @@
        this.error = 0;
      } else if (pass.length() > 9) {
        this.jPanel3.setVisible(true);
-       this.jLabel3.setText("Length exceeded. Contact your store Admin200");
+       this.jLabel3.setText("Wrong user or password");
        this.jPanel1.setVisible(false);
        cleanJPanel1();
        this.error = 0;
@@ -600,10 +600,22 @@
 
    private void jTextField4ActionPerformed(ActionEvent evt) {}
 
+   public static boolean isNumeric(String strNum) {
+ 	    if (strNum == null) {
+ 	        return false;
+ 	    }
+ 	    try {
+ 	        int i = Integer.parseInt(strNum);
+ 	    } catch (NumberFormatException nfe) {
+ 	        return false;
+ 	    }
+ 	    return true;
+ 	}
+
    private void jButton9ActionPerformed(ActionEvent evt) {
      String userID = this.jTextField4.getText().replaceAll(" ", "");
      String sales = this.jTextField3.getText().replaceAll(" ", "");
-     if (containsLetters(sales)) {
+     if (!isNumeric(sales)) {
        this.jPanel3.setVisible(true);
        this.jLabel3.setText("Sales should contain numbers");
        this.jPanel5.setVisible(false);
@@ -617,7 +629,7 @@
          this.jPanel5.setVisible(false);
          cleanJPanel5();
          this.error = 1;
-       } else if (salesInt < -1) {
+       } else if (salesInt < 0) {
          this.jPanel3.setVisible(true);
          this.jLabel3.setText("Sales cannot be less favourable");
          this.jPanel5.setVisible(false);
